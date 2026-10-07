@@ -43,7 +43,7 @@ Route::redirect('/brinquedoteca.html', '/projetos/brinquedoteca');
 
 // Painel administrativo.
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
     Route::get('/banners', [BannerController::class, 'index'])->name('banner.index');
     Route::post('/banners', [BannerController::class, 'store'])->name('banner.store');
