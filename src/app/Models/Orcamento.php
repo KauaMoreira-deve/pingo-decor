@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Orcamento extends Model
+{
+    use HasFactory;
+
+    protected $table = 'tbl_orcamento';
+
+    protected $primaryKey = 'id_orcamento';
+
+    const CREATED_AT = 'data_criacao_orcamento';
+    const UPDATED_AT = 'data_atualizacao_orcamento';
+
+    protected $fillable = [
+        'id_contato',
+        'titulo_orcamento',
+        'valor_total_orcamento',
+        'prazo_execucao_orcamento',
+        'observacoes_orcamento',
+        'status_orcamento',
+    ];
+}

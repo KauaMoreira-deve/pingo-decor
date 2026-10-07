@@ -1,0 +1,495 @@
+{
+  "banners": {
+    "title": "Banners e destaques",
+    "subtitle": "Imagens de capa e chamadas visuais da página inicial.",
+    "columns": [
+      {
+        "key": "image",
+        "label": "Imagem",
+        "type": "image"
+      },
+      {
+        "key": "title",
+        "label": "Destaque",
+        "type": "title"
+      },
+      {
+        "key": "local",
+        "label": "Local no site",
+        "type": "text"
+      },
+      {
+        "key": "status",
+        "label": "Situação",
+        "type": "status"
+      },
+      {
+        "key": "updated",
+        "label": "Atualizado",
+        "type": "text"
+      }
+    ],
+    "rows": [
+      {
+        "image": "pingo-decor/assets/img/banner.png",
+        "title": "Banner principal",
+        "local": "Home · topo da página",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "18 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/img/parallax1.jpg",
+        "title": "Universos afetivos",
+        "local": "Home · faixa intermediária",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "16 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/img/_MG_7517.jpg",
+        "title": "Explore nossos projetos",
+        "local": "Home · chamada final",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "14 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/img/_MG_8433.jpg",
+        "title": "Nova coleção de ambientes",
+        "local": "Home · destaque futuro",
+        "status": "Rascunho",
+        "status_tone": "draft",
+        "updated": "12 set 2026"
+      }
+    ]
+  },
+  "textos": {
+    "title": "Textos do site",
+    "subtitle": "Chamadas, apresentações e descrições exibidas nas páginas.",
+    "columns": [
+      {
+        "key": "title",
+        "label": "Bloco de texto",
+        "type": "title"
+      },
+      {
+        "key": "preview",
+        "label": "Prévia do conteúdo",
+        "type": "text"
+      },
+      {
+        "key": "page",
+        "label": "Página",
+        "type": "text"
+      },
+      {
+        "key": "status",
+        "label": "Situação",
+        "type": "status"
+      },
+      {
+        "key": "updated",
+        "label": "Atualizado",
+        "type": "text"
+      }
+    ],
+    "rows": [
+      {
+        "title": "Apresentação principal",
+        "preview": "Não criamos apenas quartos infantis, construímos universos afetivos...",
+        "page": "Home",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "18 set 2026"
+      },
+      {
+        "title": "Conceito Pingo Decor",
+        "preview": "Cada projeto · pensado para traduzir a infância de forma autoral...",
+        "page": "Home",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "17 set 2026"
+      },
+      {
+        "title": "Quem somos",
+        "preview": "Arquitetura afetiva, repertório sensível e atenção aos detalhes.",
+        "page": "Sobre",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "15 set 2026"
+      },
+      {
+        "title": "Chamada de projetos",
+        "preview": "Ambientes criados para acompanhar histórias e descobertas.",
+        "page": "Projetos",
+        "status": "Em revisão",
+        "status_tone": "review",
+        "updated": "13 set 2026"
+      },
+      {
+        "title": "Convite para proposta",
+        "preview": "Preencha o formulário e receba uma proposta personalizada.",
+        "page": "Contato",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "11 set 2026"
+      }
+    ]
+  },
+  "projetos": {
+    "title": "Projetos",
+    "subtitle": "Capas e informações dos ambientes apresentados no portfólio.",
+    "columns": [
+      {
+        "key": "image",
+        "label": "Capa",
+        "type": "image"
+      },
+      {
+        "key": "title",
+        "label": "Projeto",
+        "type": "title"
+      },
+      {
+        "key": "category",
+        "label": "Categoria",
+        "type": "text"
+      },
+      {
+        "key": "photos",
+        "label": "Fotos",
+        "type": "text"
+      },
+      {
+        "key": "status",
+        "label": "Situação",
+        "type": "status"
+      },
+      {
+        "key": "updated",
+        "label": "Atualizado",
+        "type": "text"
+      }
+    ],
+    "rows": [
+      {
+        "image": "pingo-decor/assets/img/olivia.webp",
+        "title": "Quarto Olivia",
+        "category": "Quarto infantil",
+        "photos": "12",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "18 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Matteo",
+        "category": "Quarto infantil",
+        "photos": "10",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "17 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/img/lucca.webp",
+        "title": "Quarto Lucca",
+        "category": "Quarto infantil",
+        "photos": "9",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "16 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Julia e Isabella",
+        "category": "Quarto compartilhado",
+        "photos": "10",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "15 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Joaquim",
+        "category": "Quarto infantil",
+        "photos": "9",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "14 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/img/_MG_1853.jpg",
+        "title": "Quarto Dan e Ava",
+        "category": "Quarto compartilhado",
+        "photos": "9",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "13 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Catarina",
+        "category": "Quarto infantil",
+        "photos": "10",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "12 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Benjamin",
+        "category": "Quarto infantil",
+        "photos": "9",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "11 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Alice e Catarina",
+        "category": "Quarto compartilhado",
+        "photos": "10",
+        "status": "Em revisão",
+        "status_tone": "review",
+        "updated": "10 set 2026"
+      },
+      {
+        "image": "pingo-decor/assets/img/brinquedoteca.jpg",
+        "title": "Brinquedoteca Gael, Theo e Sophia",
+        "category": "Brinquedoteca",
+        "photos": "9",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "09 set 2026"
+      }
+    ]
+  },
+  "galeria": {
+    "title": "Galerias de fotos",
+    "subtitle": "Organize as imagens e a ordem de exibição em cada projeto.",
+    "columns": [
+      {
+        "key": "image",
+        "label": "Prévia",
+        "type": "image"
+      },
+      {
+        "key": "title",
+        "label": "Imagem",
+        "type": "title"
+      },
+      {
+        "key": "project",
+        "label": "Projeto associado",
+        "type": "text"
+      },
+      {
+        "key": "order",
+        "label": "Ordem",
+        "type": "text"
+      },
+      {
+        "key": "status",
+        "label": "Situação",
+        "type": "status"
+      }
+    ],
+    "rows": [
+      {
+        "image": "pingo-decor/assets/img/olivia.webp",
+        "title": "Capa do quarto Olivia",
+        "project": "Quarto Olivia",
+        "order": "01",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/img/lucca.webp",
+        "title": "Detalhe do quarto Lucca",
+        "project": "Quarto Lucca",
+        "order": "02",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/img/_MG_1853.jpg",
+        "title": "Ambiente Dan e Ava",
+        "project": "Quarto Dan e Ava",
+        "order": "03",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/img/brinquedoteca.jpg",
+        "title": "Espaço de brincar",
+        "project": "Brinquedoteca",
+        "order": "04",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/img/_MG_7517.jpg",
+        "title": "Detalhe afetivo",
+        "project": "Seleção da home",
+        "order": "05",
+        "status": "Em revisão",
+        "status_tone": "review"
+      }
+    ]
+  },
+  "publicacoes": {
+    "title": "Publicações",
+    "subtitle": "Matérias, links externos e imagens da página de publicações.",
+    "columns": [
+      {
+        "key": "image",
+        "label": "Imagem",
+        "type": "image"
+      },
+      {
+        "key": "title",
+        "label": "Matéria",
+        "type": "title"
+      },
+      {
+        "key": "source",
+        "label": "Veículo",
+        "type": "text"
+      },
+      {
+        "key": "date",
+        "label": "Data",
+        "type": "text"
+      },
+      {
+        "key": "status",
+        "label": "Situação",
+        "type": "status"
+      }
+    ],
+    "rows": [
+      {
+        "image": "pingo-decor/assets/img/brinquedoteca.jpg",
+        "title": "A magia do design de interiores para crianças",
+        "source": "Casa Abril",
+        "date": "18 set 2026",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Quarto Martim: divertido e organizado",
+        "source": "Casa e Jardim",
+        "date": "12 set 2026",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Um quarto com a personalidade de Benjamin",
+        "source": "Pais & Filhos",
+        "date": "08 set 2026",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Marcenaria planejada no quarto infantil",
+        "source": "Melhor Lugar",
+        "date": "04 set 2026",
+        "status": "Publicado",
+        "status_tone": "published"
+      },
+      {
+        "image": "pingo-decor/assets/imagem-indisponivel.svg",
+        "title": "Dicas para projetar quartos infantis",
+        "source": "Melhor Lugar",
+        "date": "29 ago 2026",
+        "status": "Em revisão",
+        "status_tone": "review"
+      },
+      {
+        "image": "pingo-decor/assets/img/muskinha.jpeg",
+        "title": "Casa Muskinha apresenta espaços assinados",
+        "source": "Revista Decor",
+        "date": "22 ago 2026",
+        "status": "Publicado",
+        "status_tone": "published"
+      }
+    ]
+  },
+  "paginas": {
+    "title": "Páginas do site",
+    "subtitle": "Estrutura das páginas, títulos e estados de publicação.",
+    "columns": [
+      {
+        "key": "title",
+        "label": "Página",
+        "type": "title"
+      },
+      {
+        "key": "path",
+        "label": "Endereço",
+        "type": "text"
+      },
+      {
+        "key": "sections",
+        "label": "Seções",
+        "type": "text"
+      },
+      {
+        "key": "status",
+        "label": "Situação",
+        "type": "status"
+      },
+      {
+        "key": "updated",
+        "label": "Atualizado",
+        "type": "text"
+      }
+    ],
+    "rows": [
+      {
+        "title": "Página inicial",
+        "path": "/",
+        "sections": "Banner · Apresentação · Projetos",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "18 set 2026"
+      },
+      {
+        "title": "Sobre nós",
+        "path": "/sobre",
+        "sections": "Equipe · Manifesto",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "15 set 2026"
+      },
+      {
+        "title": "Portfólio",
+        "path": "/projetos",
+        "sections": "Lista · Galerias",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "14 set 2026"
+      },
+      {
+        "title": "Publicações",
+        "path": "/publicacoes",
+        "sections": "Matérias · Destaques",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "12 set 2026"
+      },
+      {
+        "title": "Contato",
+        "path": "/contato",
+        "sections": "Proposta · Redes sociais",
+        "status": "Publicado",
+        "status_tone": "published",
+        "updated": "10 set 2026"
+      }
+    ]
+  }
+}

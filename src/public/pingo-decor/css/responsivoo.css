@@ -1,0 +1,19 @@
+
+/* CELULAR */
+@media (max-width: 767px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 240px;
+        width: 94%;
+        margin: 30px auto;
+    }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .galeria-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        width: 94%;
+    }
+}
