@@ -36,13 +36,13 @@ class PublicacoesController extends Controller
             $publicacao = Publicacoes::create([
                 'titulo_publicacoes' => $dados['titulo_publicacoes'],
                 'descricao_publicacoes' => $dados['descricao_publicacoes'],
-                'imagem_publicacoes' => 'publicacoes/sem-foto.png',
+                'imagem_publicacoes' => 'publicacao/sem-foto.png',
                 'link_publicacoes' => $dados['link_publicacoes'],
                 'data_publicacoes' => $dados['data_publicacoes'],
             ]);
 
             $caminhoRelativo = $this->salvarImagem($request->file('imagem_publicacoes'), $publicacao);
-            $novoArquivo = public_path('pingo-decor/assets/' . $caminhoRelativo);
+            $novoArquivo = public_path('pingo-decor/assets/publicacao' . $caminhoRelativo);
             $publicacao->update(['imagem_publicacoes' => $caminhoRelativo]);
 
             DB::commit();
@@ -83,7 +83,7 @@ class PublicacoesController extends Controller
 
             if ($request->hasFile('imagem_publicacoes')) {
                 $caminhoImagem = $this->salvarImagem($request->file('imagem_publicacoes'), $publicacao, $dados['titulo_publicacoes']);
-                $novoArquivo = public_path('pingo-decor/assets/' . $caminhoImagem);
+                $novoArquivo = public_path('pingo-decor/assets/publicacao' . $caminhoImagem);
             }
 
             $publicacao->update([
@@ -141,7 +141,7 @@ class PublicacoesController extends Controller
         $slug = Str::limit(Str::slug($titulo ?? $publicacao->titulo_publicacoes), 50, '');
         $extensao = strtolower($imagem->getClientOriginalExtension());
         $nomeImagem = $slug . '_' . $publicacao->id_publicacoes . '_' . Str::lower(Str::random(6)) . '.' . $extensao;
-        $pasta = public_path('pingo-decor/assets/publicacoes');
+        $pasta = public_path('pingo-decor/assets/publicacao');
 
         if (!is_dir($pasta)) {
             mkdir($pasta, 0775, true);
@@ -149,16 +149,16 @@ class PublicacoesController extends Controller
 
         $imagem->move($pasta, $nomeImagem);
 
-        return 'publicacoes/' . $nomeImagem;
+        return 'publicacao/' . $nomeImagem;
     }
 
     private function excluirImagem(?string $caminhoRelativo): void
     {
-        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'publicacoes/')) {
+        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'publicacao/')) {
             return;
         }
 
-        $this->excluirArquivoFisico(public_path('pingo-decor/assets/' . $caminhoRelativo));
+        $this->excluirArquivoFisico(public_path('pingo-decor/assets/publicacao/' . $caminhoRelativo));
     }
 
     private function excluirArquivoFisico(?string $caminho): void

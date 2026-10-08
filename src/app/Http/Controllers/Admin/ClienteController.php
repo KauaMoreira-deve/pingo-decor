@@ -38,7 +38,7 @@ class ClienteController extends Controller
                 'nome_cliente' => $dados['nome_cliente'],
                 'email_cliente' => $dados['email_cliente'],
                 'senha_cliente' => Hash::make($dados['senha_cliente']),
-                'foto_cliente' => 'clientes/sem-foto.png',
+                'foto_cliente' => 'cliente/sem-foto.png',
                 'status_cliente' => $dados['status_cliente'],
             ]);
 

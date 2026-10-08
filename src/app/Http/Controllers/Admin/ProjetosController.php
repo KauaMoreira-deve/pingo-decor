@@ -33,12 +33,12 @@ class ProjetosController extends Controller
 
             $projeto = Projetos::create([
                 'nome_projetos' => $dados['nome_projetos'],
-                'imagem_projetos' => 'projetos/sem-foto.png',
+                'imagem_projetos' => 'projeto/sem-foto.png',
                 'status_projetos' => $dados['status_projetos'],
             ]);
 
             $caminhoRelativo = $this->salvarImagem($request->file('imagem_projetos'), $projeto);
-            $novoArquivo = public_path('pingo-decor/assets/' . $caminhoRelativo);
+            $novoArquivo = public_path('pingo-decor/assets/projeto/' . $caminhoRelativo);
             $projeto->update(['imagem_projetos' => $caminhoRelativo]);
 
             DB::commit();
@@ -77,7 +77,7 @@ class ProjetosController extends Controller
 
             if ($request->hasFile('imagem_projetos')) {
                 $caminhoImagem = $this->salvarImagem($request->file('imagem_projetos'), $projeto, $dados['nome_projetos']);
-                $novoArquivo = public_path('pingo-decor/assets/' . $caminhoImagem);
+                $novoArquivo = public_path('pingo-decor/assets/projetos/' . $caminhoImagem);
             }
 
             $projeto->update([
@@ -133,7 +133,7 @@ class ProjetosController extends Controller
         $slug = Str::limit(Str::slug($nome ?? $projeto->nome_projetos), 30, '');
         $extensao = strtolower($imagem->getClientOriginalExtension());
         $nomeImagem = $slug . '_' . $projeto->id_projetos . '_' . Str::lower(Str::random(6)) . '.' . $extensao;
-        $pasta = public_path('pingo-decor/assets/projetos');
+        $pasta = public_path('pingo-decor/assets/projeto/');
 
         if (!is_dir($pasta)) {
             mkdir($pasta, 0775, true);
@@ -141,16 +141,16 @@ class ProjetosController extends Controller
 
         $imagem->move($pasta, $nomeImagem);
 
-        return 'projetos/' . $nomeImagem;
+        return 'projeto/' . $nomeImagem;
     }
 
     private function excluirImagem(?string $caminhoRelativo): void
     {
-        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'projetos/')) {
+        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'projeto/')) {
             return;
         }
 
-        $this->excluirArquivoFisico(public_path('pingo-decor/assets/' . $caminhoRelativo));
+        $this->excluirArquivoFisico(public_path('pingo-decor/assets/projeto/' . $caminhoRelativo));
     }
 
     private function excluirArquivoFisico(?string $caminho): void
