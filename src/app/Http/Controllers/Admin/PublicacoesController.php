@@ -50,16 +50,13 @@ class PublicacoesController extends Controller
             return redirect()
                 ->route('admin.publicacoes.index')
                 ->with('sucesso', 'Publicação cadastrada com sucesso!');
-        } catch (\Throwable $erro) {
-            DB::rollBack();
-            $this->excluirArquivoFisico($novoArquivo);
-            report($erro);
-
-            return redirect()
-                ->back()
-                ->withInput()
-                ->with('erro', 'Não foi possível cadastrar a publicação. Tente novamente.');
-        }
+            } catch (\Throwable $erro) {
+                DB::rollBack();
+                $this->excluirArquivoFisico($novoArquivo);
+                
+                // Mostra o erro real diretamente na tela
+                dd($erro->getMessage(), $erro->getFile(), $erro->getLine());
+            }
     }
 
     public function update(Request $request, int $id)
@@ -69,7 +66,7 @@ class PublicacoesController extends Controller
             'descricao_publicacoes' => 'required|string',
             'imagem_publicacoes' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4096',
             'link_publicacoes' => 'required|url|max:255',
-            'data_publicacoes' => 'required|date',
+            'data_publicacoes' => 'required|    date',
         ]);
 
         $publicacao = Publicacoes::findOrFail($id);
