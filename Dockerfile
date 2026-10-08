@@ -1,5 +1,7 @@
 FROM php:8.4-fpm
 
+ARG HOST_GID=1000
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libicu-dev \
@@ -14,6 +16,8 @@ RUN apt-get update \
         zip \
         intl \
         mbstring \
+    && groupadd --gid "${HOST_GID}" hostfiles \
+    && usermod --append --groups hostfiles www-data \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www

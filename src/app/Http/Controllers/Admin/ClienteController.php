@@ -43,7 +43,7 @@ class ClienteController extends Controller
             ]);
 
             $caminhoRelativo = $this->salvarImagem($request->file('foto_cliente'), $cliente);
-            $novoArquivo = public_path('pingo-decor/assets/' . $caminhoRelativo);
+            $novoArquivo = public_path('pingo-decor/assets/cliente/' . $caminhoRelativo);
             $cliente->update(['foto_cliente' => $caminhoRelativo]);
 
             DB::commit();
@@ -83,7 +83,7 @@ class ClienteController extends Controller
 
             if ($request->hasFile('foto_cliente')) {
                 $caminhoFoto = $this->salvarImagem($request->file('foto_cliente'), $cliente, $dados['nome_cliente']);
-                $novoArquivo = public_path('pingo-decor/assets/' . $caminhoFoto);
+                $novoArquivo = public_path('pingo-decor/assets/cliente' . $caminhoFoto);
             }
 
             $cliente->update([
@@ -140,7 +140,7 @@ class ClienteController extends Controller
         $slug = Str::limit(Str::slug($nome ?? $cliente->nome_cliente), 30, '');
         $extensao = strtolower($imagem->getClientOriginalExtension());
         $nomeImagem = $slug . '_' . $cliente->id_cliente . '_' . Str::lower(Str::random(6)) . '.' . $extensao;
-        $pasta = public_path('pingo-decor/assets/clientes');
+        $pasta = public_path('pingo-decor/assets/cliente');
 
         if (!is_dir($pasta)) {
             mkdir($pasta, 0775, true);
@@ -148,16 +148,16 @@ class ClienteController extends Controller
 
         $imagem->move($pasta, $nomeImagem);
 
-        return 'clientes/' . $nomeImagem;
+        return 'cliente/' . $nomeImagem;
     }
 
     private function excluirImagem(?string $caminhoRelativo): void
     {
-        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'clientes/')) {
+        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'cliente/')) {
             return;
         }
 
-        $this->excluirArquivoFisico(public_path('pingo-decor/assets/' . $caminhoRelativo));
+        $this->excluirArquivoFisico(public_path('pingo-decor/assets/cliente/' . $caminhoRelativo));
     }
 
     private function excluirArquivoFisico(?string $caminho): void

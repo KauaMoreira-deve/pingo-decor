@@ -6,6 +6,7 @@ if [ -d /var/www ]; then
 
     mkdir -p \
         /var/www/bootstrap/cache \
+        /var/www/public/pingo-decor/assets/banner \
         /var/www/storage/app/public \
         /var/www/storage/framework/cache/data \
         /var/www/storage/framework/sessions \
@@ -13,16 +14,19 @@ if [ -d /var/www ]; then
         /var/www/storage/logs
 
     chgrp -R www-data \
+        /var/www/public/pingo-decor/assets/banner \
         /var/www/storage \
         /var/www/bootstrap/cache \
         2>/dev/null || true
 
     chmod -R g+rwX \
+        /var/www/public/pingo-decor/assets/banner \
         /var/www/storage \
         /var/www/bootstrap/cache \
         2>/dev/null || true
 
     find \
+        /var/www/public/pingo-decor/assets/banner \
         /var/www/storage \
         /var/www/bootstrap/cache \
         -type d -exec chmod g+s '{}' + \

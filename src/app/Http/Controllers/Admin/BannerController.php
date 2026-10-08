@@ -14,10 +14,11 @@ class BannerController extends Controller
     public function index(): View
     {
         $listarBanner = Banner::orderByDesc('id_banner')->get();
-
+        
         return view('admin.banner.index', compact('listarBanner'));
     }
-
+    
+    
     public function store(Request $request)
     {
         $dados = $request->validate([
@@ -27,19 +28,18 @@ class BannerController extends Controller
         ]);
 
         $novoArquivo = null;
-
         try {
             DB::beginTransaction();
-
+            
             $banner = Banner::create([
                 'titulo_banner' => $dados['titulo_banner'],
-                'imagem_banner' => 'banners/sem-foto.png',
+                'imagem_banner' => 'banner/sem-foto.png',
                 'status_banner' => $dados['status_banner'],
             ]);
-
+            
             $caminhoRelativo = $this->salvarImagem($request->file('imagem_banner'), $banner);
             $novoArquivo = public_path('pingo-decor/assets/' . $caminhoRelativo);
-
+            
             $banner->update(['imagem_banner' => $caminhoRelativo]);
 
             DB::commit();
@@ -58,6 +58,7 @@ class BannerController extends Controller
                 ->with('erro', 'Não foi possível cadastrar o banner. Tente novamente.');
         }
     }
+
 
     public function update(Request $request, int $id)
     {
@@ -134,7 +135,7 @@ class BannerController extends Controller
         $slug = Str::limit(Str::slug($titulo ?? $banner->titulo_banner), 30, '');
         $extensao = strtolower($imagem->getClientOriginalExtension());
         $nomeImagem = $slug . '_' . $banner->id_banner . '_' . Str::lower(Str::random(6)) . '.' . $extensao;
-        $pasta = public_path('pingo-decor/assets/banners');
+        $pasta = public_path('pingo-decor/assets/banner');
 
         if (!is_dir($pasta)) {
             mkdir($pasta, 0775, true);
@@ -142,12 +143,12 @@ class BannerController extends Controller
 
         $imagem->move($pasta, $nomeImagem);
 
-        return 'banners/' . $nomeImagem;
+        return 'banner/' . $nomeImagem;
     }
 
     private function excluirImagem(?string $caminhoRelativo): void
     {
-        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'banners/')) {
+        if (!$caminhoRelativo || !str_starts_with($caminhoRelativo, 'banner/')) {
             return;
         }
 
